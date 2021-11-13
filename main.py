@@ -1,4 +1,13 @@
-<<<<<<< HEAD
+from os import system, name
+from typing import Optional
+# Funcion que permite limpiar la consola
+def clear():
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
+
 #  =========== VIEW =================
 ## UI/UX
 def viewWelcome(): ## Function dummy
@@ -13,25 +22,26 @@ def viewGoodBye():  # Function dummy
 
 def viewAppMenu():  # UI AppMenu
   print('''
-  MENU PRINCIPAL, escoga:
-  [1] convertir a Decimal/Hexagecimal/Octal
-  [2] convertir a Binario
-  [3] salir
+  MENU PRINCIPAL
+    (elija una opcion y presione enter):
+      [1] convertir a Decimal/Hexagecimal/Octal
+      [2] convertir a Binario
+      [3] salir
+      [4] ayuda
   ''')
 
 ## UI MENU of conversion
 def viewMenuOfConversion():
   print('''
   Usted eligio convertir un NÚMERO a:
-    Escoga una opción:
-    [1] convertir a Decimal
-    [2] convertir a Octal
-    [3] convertir a Hexagecimal
+    (elija una opcion y presione enter):
+      [1] convertir a Decimal
+      [2] convertir a Octal
+      [3] convertir a Hexagecimal
   ''')
 
 def viewUserNumber():  # Funtion dummy
-    print('''Ingresa tú número.
-    ''')
+    print('''Ingresa tú número y presione enter):''')
 # ======== END-VIEW ==================
 
 # ======== CONTROLLERS  ============= (no tengo ni idea si se llama asi para este caso)
@@ -56,22 +66,23 @@ def converterNumber():
   viewUserNumber()
   num = inputNumber()
   if option ==1:
-    print('El numero {} en el convertidor para decimal es igual a {}'.format(num, num, 2))
+    print('El numero {} en el convertidor para DECIMAL es igual a {}'.format(num, num, 2))
     return viewAppMenu()
   elif option ==2:
-    print('El numero {} en el convertidor para octal es igual a {}'.format(num, oct(num)))
+    print('El numero {} en el convertidor para OCTAL es igual a {}'.format(num, oct(num)))
     return viewAppMenu()
   elif option ==3:
-    print('El numero {} en el convertidor para Hexagecimal es igual a {}'.format(num, hex(num)))
+    print('El numero {} en el convertidor para HEXAGECIMAL es igual a {}'.format(num, hex(num)))
     return viewAppMenu()
   return
 
 def viewMenuConversionToBinario():
-  print('''Elija una opcion para convertir a numero binario"
-  Escoga una opcion de conversion:
-  [1] convertir de Decimal a binario
-  [2] convertir de Hexagecimal a binario
-  [3] convertir de octal a binario
+  print('''
+  Elija una opcion para convertir a numero binario"
+    (elija una opcion y presione enter):
+      [1] convertir de Decimal a binario
+      [2] convertir de Hexagecimal a binario
+      [3] convertir de octal a binario
   ''')
 def conversionToBinario():
   viewMenuConversionToBinario()
@@ -79,11 +90,11 @@ def conversionToBinario():
   print("Ingrese su número decimal/octal/Hexagecimal")
   num = inputNumber()
   if option == 1:
-    print('El numero {} en el convertidor de decimal a binario es igual a {}'.format(num,(int(bin(int(num))[2:]))))
+    print('El numero {} en el convertidor de DEXIMAL a BINARIO es igual a {}'.format(num,(int(bin(int(num))[2:]))))
   elif option == 2:
-    print('El numero {} en el convertidor de octal a binario es igual a {}'.format(num, (int(bin(int(num, 8))[2:]))))
+    print('El numero {} en el convertidor de OCTAL a BINARIO es igual a {}'.format(num, (int(bin(int(num, 8))[2:]))))
   elif option == 3:
-    print('El numero {} en el convertidor de Hexagecimal a Binario es igual a {}'.format(num, (int(bin(int(num, 16))[2:]))))
+    print('El numero {} en el convertidor de HEXAGESIMAL a BINARIO es igual a {}'.format(num, (int(bin(int(num, 16))[2:]))))
   else:
     print('opcion invalida, intente nuevamente.')
 
@@ -112,50 +123,3 @@ def main():
 
 ## LLAMADA A LA APP
 main()
-=======
-from os import system, name
-from typing import Optional
-# Funcion que permite limpiar la consola
-def clear():
-    # for windows
-    if name == 'nt':
-        _ = system('cls')
-    else:
-        _ = system('clear')
-
-
-Binario=int(input('Digite un numero para su conversion: '))
-print(''' Escoga una base de conversion:
-[1] convertir a Decimal
-[2] convertir a Hexagecimal
-[3] convertir a octal
-''')
-
-opcion = int(input('Opcion: '))
-if opcion ==1:
-   print('El numero {} en el convertidor para decimal es igual a {}'.format(Binario,(int(str(Binario),2))))
-elif opcion ==2:
-  print('El numero {} en el convertidor para octal es igual a {}'.format(Binario, oct(Binario)))
-elif opcion ==3:
-  print('El numero {} en el convertidor para Hexagecimal es igual a {}'.format(Binario, hex(Binario)))
-else: 
-  print('opcion invalida, intente nuevamente.')
-Numero=(input('Digite un numero para su conversion: '))
-print(''' Convertir a binario:
-[1] convertir de Decimal a binario
-[2] convertir de Octal a binario
-[3] convertir de Hexagecimal a binario''')
-
-conversion =int(input('Opcion:'))
-if conversion ==1:
-   print('El numero {} en el convertidor de decimal a binario es igual a {}'.format(Numero,(int(bin(int(Numero))[2:]))))
-elif conversion ==2:
-  print('El numero {} en el convertidor de octal a binario es igual a {}'.format(Numero,(int(bin(int(Numero, 8))[2:]))))
-elif conversion ==3:
-  print('El numero {} en el convertidor de Hexagecimal a Binario es igual a {}'.format(Numero,(int(bin(int(Numero , 16))[2:]))))
-else: 
-  print('opcion invalida, intente nuevamente.')
-
-  
-  
->>>>>>> main~~~~
