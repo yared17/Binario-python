@@ -1,3 +1,14 @@
+from os import system, name
+from typing import Optional
+# Funcion que permite limpiar la consola
+def clear():
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
+
+
 Binario=int(input('Digite un numero para su conversion: '))
 print(''' Escoga una base de conversion:
 [1] convertir a Decimal
